@@ -1,0 +1,5 @@
+velocity:640
+svelocity:340
+hbvelocity:640
+gravity:15
+timetolive:1.5

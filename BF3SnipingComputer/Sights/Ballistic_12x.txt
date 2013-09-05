@@ -1,0 +1,5 @@
+mildot:8
+pixels:270
+a:0
+b:8
+c:-2
