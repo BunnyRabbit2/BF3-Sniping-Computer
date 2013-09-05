@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.barrelTypeLabel = new System.Windows.Forms.Label();
             this.barrelTypeComboBox = new System.Windows.Forms.ComboBox();
             this.calculateDistanceButton = new System.Windows.Forms.Button();
@@ -45,6 +44,16 @@
             this.distanceTextBox = new System.Windows.Forms.TextBox();
             this.targetSizeTextBox = new System.Windows.Forms.TextBox();
             this.milsTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.vodnikSizeLabel = new System.Windows.Forms.Label();
+            this.humveeSizeLabel = new System.Windows.Forms.Label();
+            this.bmpSizeLabel = new System.Windows.Forms.Label();
+            this.lavSizeLabel = new System.Windows.Forms.Label();
+            this.t90SizeLabel = new System.Windows.Forms.Label();
+            this.abramsSizeLabel = new System.Windows.Forms.Label();
+            this.truckCabHeightLabel = new System.Windows.Forms.Label();
+            this.manSizeLabel = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.maxRangeLabel = new System.Windows.Forms.Label();
             this.maxRangeOutput = new System.Windows.Forms.Label();
             this.mDropLabel = new System.Windows.Forms.Label();
@@ -55,21 +64,12 @@
             this.velocityOutputLabel = new System.Windows.Forms.Label();
             this.milDropLabel = new System.Windows.Forms.Label();
             this.milDropOutput = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.vodnikSizeLabel = new System.Windows.Forms.Label();
-            this.humveeSizeLabel = new System.Windows.Forms.Label();
-            this.bmpSizeLabel = new System.Windows.Forms.Label();
-            this.lavSizeLabel = new System.Windows.Forms.Label();
-            this.t90SizeLabel = new System.Windows.Forms.Label();
-            this.abramsSizeLabel = new System.Windows.Forms.Label();
-            this.truckCabHeightLabel = new System.Windows.Forms.Label();
-            this.manSizeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -105,25 +105,6 @@
             this.splitContainer1.SplitterDistance = 179;
             this.splitContainer1.TabIndex = 0;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.maxRangeLabel);
-            this.groupBox1.Controls.Add(this.maxRangeOutput);
-            this.groupBox1.Controls.Add(this.mDropLabel);
-            this.groupBox1.Controls.Add(this.mDropOutput);
-            this.groupBox1.Controls.Add(this.timeToTargetLabel);
-            this.groupBox1.Controls.Add(this.timeToTargetOutput);
-            this.groupBox1.Controls.Add(this.velocityLabel);
-            this.groupBox1.Controls.Add(this.velocityOutputLabel);
-            this.groupBox1.Controls.Add(this.milDropLabel);
-            this.groupBox1.Controls.Add(this.milDropOutput);
-            this.groupBox1.Location = new System.Drawing.Point(12, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(212, 139);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Shooting Details";
-            // 
             // barrelTypeLabel
             // 
             this.barrelTypeLabel.AutoSize = true;
@@ -140,6 +121,7 @@
             this.barrelTypeComboBox.Name = "barrelTypeComboBox";
             this.barrelTypeComboBox.Size = new System.Drawing.Size(269, 21);
             this.barrelTypeComboBox.TabIndex = 42;
+            this.barrelTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.barrelTypeComboBox_SelectedIndexChanged);
             // 
             // calculateDistanceButton
             // 
@@ -149,6 +131,7 @@
             this.calculateDistanceButton.TabIndex = 39;
             this.calculateDistanceButton.Text = "Calculate";
             this.calculateDistanceButton.UseVisualStyleBackColor = true;
+            this.calculateDistanceButton.Click += new System.EventHandler(this.calculateDistanceButton_Click);
             // 
             // calculateMilButton
             // 
@@ -158,6 +141,7 @@
             this.calculateMilButton.TabIndex = 40;
             this.calculateMilButton.Text = "Calculate";
             this.calculateMilButton.UseVisualStyleBackColor = true;
+            this.calculateMilButton.Click += new System.EventHandler(this.calculateMilButton_Click);
             // 
             // calculateSizeButton
             // 
@@ -167,6 +151,7 @@
             this.calculateSizeButton.TabIndex = 41;
             this.calculateSizeButton.Text = "Calculate";
             this.calculateSizeButton.UseVisualStyleBackColor = true;
+            this.calculateSizeButton.Click += new System.EventHandler(this.calculateSizeButton_Click);
             // 
             // weaponLabel
             // 
@@ -184,6 +169,7 @@
             this.weaponComboBox.Name = "weaponComboBox";
             this.weaponComboBox.Size = new System.Drawing.Size(269, 21);
             this.weaponComboBox.TabIndex = 37;
+            this.weaponComboBox.SelectedIndexChanged += new System.EventHandler(this.weaponComboBox_SelectedIndexChanged);
             // 
             // sightLabel
             // 
@@ -201,6 +187,7 @@
             this.sightComboBox.Name = "sightComboBox";
             this.sightComboBox.Size = new System.Drawing.Size(269, 21);
             this.sightComboBox.TabIndex = 35;
+            this.sightComboBox.SelectedIndexChanged += new System.EventHandler(this.sightComboBox_SelectedIndexChanged);
             // 
             // sizeLabel
             // 
@@ -235,6 +222,7 @@
             this.distanceTextBox.Name = "distanceTextBox";
             this.distanceTextBox.Size = new System.Drawing.Size(188, 20);
             this.distanceTextBox.TabIndex = 33;
+            this.distanceTextBox.TextChanged += new System.EventHandler(this.distanceTextBox_TextChanged);
             // 
             // targetSizeTextBox
             // 
@@ -249,6 +237,119 @@
             this.milsTextBox.Name = "milsTextBox";
             this.milsTextBox.Size = new System.Drawing.Size(188, 20);
             this.milsTextBox.TabIndex = 32;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.vodnikSizeLabel);
+            this.groupBox2.Controls.Add(this.humveeSizeLabel);
+            this.groupBox2.Controls.Add(this.bmpSizeLabel);
+            this.groupBox2.Controls.Add(this.lavSizeLabel);
+            this.groupBox2.Controls.Add(this.t90SizeLabel);
+            this.groupBox2.Controls.Add(this.abramsSizeLabel);
+            this.groupBox2.Controls.Add(this.truckCabHeightLabel);
+            this.groupBox2.Controls.Add(this.manSizeLabel);
+            this.groupBox2.Location = new System.Drawing.Point(12, 148);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(408, 120);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Object Sizes. Click to put in Target Size";
+            // 
+            // vodnikSizeLabel
+            // 
+            this.vodnikSizeLabel.AutoSize = true;
+            this.vodnikSizeLabel.Location = new System.Drawing.Point(142, 48);
+            this.vodnikSizeLabel.Name = "vodnikSizeLabel";
+            this.vodnikSizeLabel.Size = new System.Drawing.Size(92, 13);
+            this.vodnikSizeLabel.TabIndex = 31;
+            this.vodnikSizeLabel.Text = "Vodnik = m height";
+            // 
+            // humveeSizeLabel
+            // 
+            this.humveeSizeLabel.AutoSize = true;
+            this.humveeSizeLabel.Location = new System.Drawing.Point(142, 26);
+            this.humveeSizeLabel.Name = "humveeSizeLabel";
+            this.humveeSizeLabel.Size = new System.Drawing.Size(114, 13);
+            this.humveeSizeLabel.TabIndex = 30;
+            this.humveeSizeLabel.Text = "Humvee = 2.2m height";
+            this.humveeSizeLabel.Click += new System.EventHandler(this.humveeSizeLabel_Click);
+            // 
+            // bmpSizeLabel
+            // 
+            this.bmpSizeLabel.AutoSize = true;
+            this.bmpSizeLabel.Location = new System.Drawing.Point(142, 93);
+            this.bmpSizeLabel.Name = "bmpSizeLabel";
+            this.bmpSizeLabel.Size = new System.Drawing.Size(82, 13);
+            this.bmpSizeLabel.TabIndex = 29;
+            this.bmpSizeLabel.Text = "BMP = m height";
+            // 
+            // lavSizeLabel
+            // 
+            this.lavSizeLabel.AutoSize = true;
+            this.lavSizeLabel.Location = new System.Drawing.Point(142, 71);
+            this.lavSizeLabel.Name = "lavSizeLabel";
+            this.lavSizeLabel.Size = new System.Drawing.Size(94, 13);
+            this.lavSizeLabel.TabIndex = 28;
+            this.lavSizeLabel.Text = "LAV = 3.5m height";
+            this.lavSizeLabel.Click += new System.EventHandler(this.lavSizeLabel_Click);
+            // 
+            // t90SizeLabel
+            // 
+            this.t90SizeLabel.AutoSize = true;
+            this.t90SizeLabel.Location = new System.Drawing.Point(6, 93);
+            this.t90SizeLabel.Name = "t90SizeLabel";
+            this.t90SizeLabel.Size = new System.Drawing.Size(78, 13);
+            this.t90SizeLabel.TabIndex = 27;
+            this.t90SizeLabel.Text = "T90 = m height";
+            // 
+            // abramsSizeLabel
+            // 
+            this.abramsSizeLabel.AutoSize = true;
+            this.abramsSizeLabel.Location = new System.Drawing.Point(6, 71);
+            this.abramsSizeLabel.Name = "abramsSizeLabel";
+            this.abramsSizeLabel.Size = new System.Drawing.Size(133, 13);
+            this.abramsSizeLabel.TabIndex = 26;
+            this.abramsSizeLabel.Text = "M1 Abrams = 2.75m height";
+            this.abramsSizeLabel.Click += new System.EventHandler(this.abramsSizeLabel_Click);
+            // 
+            // truckCabHeightLabel
+            // 
+            this.truckCabHeightLabel.AutoSize = true;
+            this.truckCabHeightLabel.Location = new System.Drawing.Point(6, 48);
+            this.truckCabHeightLabel.Name = "truckCabHeightLabel";
+            this.truckCabHeightLabel.Size = new System.Drawing.Size(115, 13);
+            this.truckCabHeightLabel.TabIndex = 25;
+            this.truckCabHeightLabel.Text = "Truck Cab = 4m height";
+            this.truckCabHeightLabel.Click += new System.EventHandler(this.truckCabHeightLabel_Click);
+            // 
+            // manSizeLabel
+            // 
+            this.manSizeLabel.AutoSize = true;
+            this.manSizeLabel.Location = new System.Drawing.Point(6, 26);
+            this.manSizeLabel.Name = "manSizeLabel";
+            this.manSizeLabel.Size = new System.Drawing.Size(95, 13);
+            this.manSizeLabel.TabIndex = 24;
+            this.manSizeLabel.Text = "Man = 1.7m height";
+            this.manSizeLabel.Click += new System.EventHandler(this.manSizeLabel_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.maxRangeLabel);
+            this.groupBox1.Controls.Add(this.maxRangeOutput);
+            this.groupBox1.Controls.Add(this.mDropLabel);
+            this.groupBox1.Controls.Add(this.mDropOutput);
+            this.groupBox1.Controls.Add(this.timeToTargetLabel);
+            this.groupBox1.Controls.Add(this.timeToTargetOutput);
+            this.groupBox1.Controls.Add(this.velocityLabel);
+            this.groupBox1.Controls.Add(this.velocityOutputLabel);
+            this.groupBox1.Controls.Add(this.milDropLabel);
+            this.groupBox1.Controls.Add(this.milDropOutput);
+            this.groupBox1.Location = new System.Drawing.Point(12, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(408, 139);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Shooting Details";
             // 
             // maxRangeLabel
             // 
@@ -340,101 +441,13 @@
             this.milDropOutput.TabIndex = 33;
             this.milDropOutput.Text = "0 mils";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.vodnikSizeLabel);
-            this.groupBox2.Controls.Add(this.humveeSizeLabel);
-            this.groupBox2.Controls.Add(this.bmpSizeLabel);
-            this.groupBox2.Controls.Add(this.lavSizeLabel);
-            this.groupBox2.Controls.Add(this.t90SizeLabel);
-            this.groupBox2.Controls.Add(this.abramsSizeLabel);
-            this.groupBox2.Controls.Add(this.truckCabHeightLabel);
-            this.groupBox2.Controls.Add(this.manSizeLabel);
-            this.groupBox2.Location = new System.Drawing.Point(12, 148);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(274, 120);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Object Sizes. Click to put in Target Size";
-            // 
-            // vodnikSizeLabel
-            // 
-            this.vodnikSizeLabel.AutoSize = true;
-            this.vodnikSizeLabel.Location = new System.Drawing.Point(142, 48);
-            this.vodnikSizeLabel.Name = "vodnikSizeLabel";
-            this.vodnikSizeLabel.Size = new System.Drawing.Size(92, 13);
-            this.vodnikSizeLabel.TabIndex = 31;
-            this.vodnikSizeLabel.Text = "Vodnik = m height";
-            // 
-            // humveeSizeLabel
-            // 
-            this.humveeSizeLabel.AutoSize = true;
-            this.humveeSizeLabel.Location = new System.Drawing.Point(142, 26);
-            this.humveeSizeLabel.Name = "humveeSizeLabel";
-            this.humveeSizeLabel.Size = new System.Drawing.Size(114, 13);
-            this.humveeSizeLabel.TabIndex = 30;
-            this.humveeSizeLabel.Text = "Humvee = 2.2m height";
-            // 
-            // bmpSizeLabel
-            // 
-            this.bmpSizeLabel.AutoSize = true;
-            this.bmpSizeLabel.Location = new System.Drawing.Point(142, 93);
-            this.bmpSizeLabel.Name = "bmpSizeLabel";
-            this.bmpSizeLabel.Size = new System.Drawing.Size(82, 13);
-            this.bmpSizeLabel.TabIndex = 29;
-            this.bmpSizeLabel.Text = "BMP = m height";
-            // 
-            // lavSizeLabel
-            // 
-            this.lavSizeLabel.AutoSize = true;
-            this.lavSizeLabel.Location = new System.Drawing.Point(142, 71);
-            this.lavSizeLabel.Name = "lavSizeLabel";
-            this.lavSizeLabel.Size = new System.Drawing.Size(94, 13);
-            this.lavSizeLabel.TabIndex = 28;
-            this.lavSizeLabel.Text = "LAV = 3.5m height";
-            // 
-            // t90SizeLabel
-            // 
-            this.t90SizeLabel.AutoSize = true;
-            this.t90SizeLabel.Location = new System.Drawing.Point(6, 93);
-            this.t90SizeLabel.Name = "t90SizeLabel";
-            this.t90SizeLabel.Size = new System.Drawing.Size(78, 13);
-            this.t90SizeLabel.TabIndex = 27;
-            this.t90SizeLabel.Text = "T90 = m height";
-            // 
-            // abramsSizeLabel
-            // 
-            this.abramsSizeLabel.AutoSize = true;
-            this.abramsSizeLabel.Location = new System.Drawing.Point(6, 71);
-            this.abramsSizeLabel.Name = "abramsSizeLabel";
-            this.abramsSizeLabel.Size = new System.Drawing.Size(133, 13);
-            this.abramsSizeLabel.TabIndex = 26;
-            this.abramsSizeLabel.Text = "M1 Abrams 2.75= m height";
-            // 
-            // truckCabHeightLabel
-            // 
-            this.truckCabHeightLabel.AutoSize = true;
-            this.truckCabHeightLabel.Location = new System.Drawing.Point(6, 48);
-            this.truckCabHeightLabel.Name = "truckCabHeightLabel";
-            this.truckCabHeightLabel.Size = new System.Drawing.Size(115, 13);
-            this.truckCabHeightLabel.TabIndex = 25;
-            this.truckCabHeightLabel.Text = "Truck Cab = 4m height";
-            // 
-            // manSizeLabel
-            // 
-            this.manSizeLabel.AutoSize = true;
-            this.manSizeLabel.Location = new System.Drawing.Point(6, 26);
-            this.manSizeLabel.Name = "manSizeLabel";
-            this.manSizeLabel.Size = new System.Drawing.Size(95, 13);
-            this.manSizeLabel.TabIndex = 24;
-            this.manSizeLabel.Text = "Man = 1.7m height";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(439, 463);
             this.Controls.Add(this.splitContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Battlefield 3 Sniping Computer";
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -442,10 +455,10 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
